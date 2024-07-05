@@ -1,0 +1,53 @@
+* { margin:0; padding:0; }
+html, body { width:100%; height:100%; }
+canvas { /*display:block;*/ }
+
+/* Центр по вертикали и по горизонтали */
+/* .canvas_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+} */
+
+.canvas_container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+header {
+    background-color: #fff;
+}
+
+.game_name {
+    text-align: center;
+    color: #5b5b5b;
+    font-family: Arial, serif;
+    font-size: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.score {
+    text-align: center;
+    color: #5b5b5b;
+    font-family: Arial, serif;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.score h2 {
+    display: inline;
+}
+
+.editor_content {
+    margin-left: 20px;
+}
+
+.tip {
+    color: gray;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+

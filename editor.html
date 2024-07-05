@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snake-JS Editor</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<header class="header">
+    <h1 class="game_name">Snake-JS Editor</h1>
+    <hr />
+</header>
+<div class="editor_content">
+    <br />
+    <h3>GAME DATA</h3>
+    <hr>
+    <br />
+    <p>tick =  <input type="text" id="tick" value="150"></p><br />
+    <p class="tip">Скорость игры</p>
+    <p>generate_food =  <input type="checkbox" id="generate_food" checked="checked"></p><br />
+    <p class="tip">Генерировать еду?</p>
+    <br />
+    <h3>LEVEL DATA</h3>
+    <hr>
+    <br />
+    <p>width =  <input type="text" id="width" value="16"></p><br />
+    <p class="tip">Ширина уровня (кол-во ячеек)</p>
+    <p>height =  <input type="text" id="height" value="16"></p><br />
+    <p class="tip">Высота уровня (кол-во ячеек)</p>
+    <p>size =  <input type="text" id="size" value="30"></p><br />
+    <p class="tip">Размер ячейки</p>
+    <p>line_width =  <input type="text" id="line_width" value="1"></p><br />
+    <p class="tip">Толщина границы ячейки</p>
+    <p>stroke_color =  <input type="text" id="stroke_color" value="silver"></p><br />
+    <a href="https://www.w3.org/wiki/CSS/Properties/color/keywords">Все цвета есть тут [нажми]</a>
+    <br />
+    <br />
+    <p class="tip">Цвет границы</p>
+    <p>fill_color =  <input type="text" id="fill_color" value="white"></p><br />
+    <p class="tip">Цвет ячейки (random для случайного цвета)</p>
+    <br />
+    <h3>SNAKE DATA</h3>
+    <hr>
+    <br />
+    <p>fill_color =  <input type="text" id="snake_fill_color" value="green"></p><br />
+    <p class="tip">Цвет сегмента змейки (random для случайного цвета)</p>
+    <p>segments = <textarea id="segments">2,7&#13;&#10;1,7&#13;&#10;0,7</textarea></p><br />
+    <p class="tip">Сегменты змейки, где первый элемент это координаты головы</p>
+    <p>direction =
+        <select id="direction">
+            <option value="Top">Top</option>
+            <option value="Down">Down</option>
+            <option value="Left">Left</option>
+            <option value="Right" selected>Right</option>
+        </select>
+    </p><br />
+    <p class="tip">Направление змейки при старте</p>
+    <p>fill_segments = <textarea id="fill_segments">darkgreen</textarea></p><br />
+    <p class="tip">Здесь можно указать цвета каждого сегмента (каждый сегмент с новой строки)</p>
+    <br />
+    <h3>FOOD DATA</h3>
+    <hr>
+    <br />
+    <p>fill_color =  <input type="text" id='food_fill_color' value="red"></p><br />
+    <p class="tip">Цвет еды (random для случайного цвета)</p>
+    <br />
+    <h3>WALL DATA</h3>
+    <hr>
+    <br />
+    <p>fill_color =  <input type="text" id="wall_fill_color" value="black"></p><br />
+    <p class="tip">Цвет стены (random для случайного цвета)</p>
+    <br />
+    <h3>LEVEL GRID</h3>
+    <hr>
+    <br />
+    <p><button onclick="generate_grid()">Генерировать</button><br /><br />level_grid = <textarea id="level_grid"></textarea></p><br />
+    <p class="tip">Сетка игры: 0 - блок пустоты, 1 - блок змеи (не использовать), 2 - блок еды, 3 - блок стены, 4 - блок ключа (победа если его задеть)</p>
+    <br />
+    <h3>KEY DATA</h3>
+    <hr>
+    <br />
+    <p>fill_color =  <input type="text" id="key_fill_color" value="yellow"></p><br />
+    <p class="tip">Цвет ключа (random для случайного цвета)</p>
+    <br />
+    <h3>PAGE DATA</h3>
+    <hr>
+    <br />
+    <p>header_background_color =  <input type="text" id="header_background_color" value="#266249"></p><br />
+    <p class="tip">Фон шапки</p>
+    <br />
+    <p>body_background_color =  <input type="text" id="body_background_color" value="#e6edea"></p><br />
+    <p class="tip">Фон страницы</p>
+    <br />
+    <p>game_name_color =  <input type="text" id="game_name_color" value="#fff"></p><br />
+    <p class="tip">Цвет текста названия</p>
+    <br />
+    <p>score_text_color =  <input type="text" id="score_text_color" value="#0e5135"></p><br />
+    <p class="tip">Цвет текста очков</p>
+    <br />
+    <p>game_border =  <input type="text" id="game_border" value="2px solid #0e5135"></p><br />
+    <p class="tip">Граница игрового поля [размер тип цвет]</p>
+    <br />
+    <button onclick="create_map()">Скачать карту</button>
+    <br />
+    <br />
+    <br />
+</div>
+<script src="js/editor.js"></script>
+</body>
+</html>
+
